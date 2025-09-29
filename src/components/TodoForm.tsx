@@ -14,7 +14,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ value, onChange, onSubmit }) => {
           type="text"
           value={value}
           onChange={onChange}
-          placeholder="Nhập tiêu đề task..."
+          placeholder="Nhập vào task..."
           className="flex-1 ml-5 px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
         />
         <button

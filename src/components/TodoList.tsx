@@ -17,7 +17,7 @@ interface TodoListProps {
 const TodoList: React.FC<TodoListProps> = ({ tasks, toggleTask, editTask, deleteTask }) => {
   return (
     <>
-      <ul className="space-y-2">
+      <ul className="space-y-2 px-5 py-5" >
         {tasks.map((task) => (
           <TodoItem
             key={task.id}

@@ -107,7 +107,8 @@ function App() {
             border: '1px solid transparent',
             backgroundImage: 'linear-gradient(white, white), linear-gradient(to right, #CA9E21, #0A6486)',
             backgroundOrigin: 'border-box',
-            backgroundClip: 'content-box, border-box'
+            backgroundClip: 'content-box, border-box',
+            borderRadius: '5px',
           }}>
 
 
