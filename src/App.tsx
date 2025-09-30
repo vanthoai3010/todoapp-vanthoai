@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import axios from "axios";
+import WeatherApp from "./axios";
 
 
 interface ToDo {
@@ -130,6 +132,11 @@ function App() {
           />
         </div>
         <ToastContainer position="top-right" autoClose={3000} />
+      </div>
+
+      <div className="max-w-lg mx-auto rounded-2xl bg-gradient-to-r from-[#00B4DB] to-[#0083B0] shadow-md mt-10 p-5 text-center">
+        <WeatherApp />
+        
       </div>
     </div>
   );
