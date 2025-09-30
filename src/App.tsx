@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import axios from "axios";
-import WeatherApp from "./axios";
+import WeatherApp from "./components/WeatherApp";
+import DongHoBamGio from "./components/DongHoBamGio";
 
 
 interface ToDo {
@@ -21,6 +22,9 @@ function App() {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [];
   });
+
+  const [color1, setColor1] = useState<string>("#dd3e54");
+  const [color2, setColor2] = useState<string>("#6be585");
 
   // Lưu vào localStorage khi tasks thay đổi
   useEffect(() => {
@@ -102,7 +106,12 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#dd3e54] to-[#6be585] py-8">
+    <div className="min-h-screen py-8"
+      style={{
+        background: `linear-gradient(to right, ${color1}, ${color2})`
+      }
+      }
+    >
       <div className="max-w-lg mx-auto bg-white rounded-lg shadow-md " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-10 items-center"
           style={{
@@ -136,7 +145,27 @@ function App() {
 
       <div className="max-w-lg mx-auto rounded-2xl bg-gradient-to-r from-[#00B4DB] to-[#0083B0] shadow-md mt-10 p-5 text-center">
         <WeatherApp />
-        
+
+      </div>
+
+      <div className="max-w-lg mx-auto rounded-2xl bg-gradient-to-r from-[#41295a] to-[#2F0743] shadow-md mt-10 p-5 text-center mb-10">
+        <DongHoBamGio />
+      </div>
+
+      <div className="max-w-lg mx-auto rounded-2xl bg-gradient-to-r from-[#0dffcb] to-[#e4aeff] shadow-md mt-10 p-5 text-center mb-10">
+        <h1 className=" bg-gradient-to-r mb-5 text-xl uppercase font-semibold from-[#74064a] to-[#0e011c] bg-clip-text text-transparent">Chọn màu nền gradient cho app </h1>
+        <input
+          type="color"
+          value={color1}
+          onChange={(e) => setColor1(e.target.value)}
+          className="mr-4 rounded"
+        />
+        <input 
+        type="color"
+        value={color2}
+        onChange={(e) => setColor2(e.target.value)} 
+        className="ml-4 rounded"
+        />
       </div>
     </div>
   );
